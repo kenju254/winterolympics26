@@ -1,0 +1,57 @@
+# Winter Olympics 2026 Medal Tracker
+
+A beautiful, premium Next.js dashboard displaying the real-time medal tally for all countries participating in the 2026 Winter Olympics in Milano Cortina.
+
+## Live Application
+
+**🟢 This application is currently deployed on Firebase App Hosting.**
+You can view the live production build here:
+👉 [https://winterolympics26--winterolympics26-428ab.us-east4.hosted.app/](https://winterolympics26--winterolympics26-428ab.us-east4.hosted.app/)
+
+## Implementation Details
+
+The core functionality of this application is driven by a unique data-fetching architecture since free, live JSON APIs for Olympic data require paid subscriptions:
+
+1. **Next.js API Scraper (`/api/medals`)**: A dedicated backend endpoint is built directly into Next.js. It fetches live HTML data (e.g., from public sources like Wikipedia), parses the medal table using `cheerio`, and structures it into clean JSON format.
+2. **Fallback Mechanism**: The API includes a hardcoded fallback mapping to ensure the UI is fully functional and populated even if the source data structure temporarily changes.
+3. **Frontend Dashboard (`page.tsx`)**: Polling the API every minute to ensure real-time updates.
+
+### Technology Stack
+
+- **Framework**: Next.js 16.1.6 (App Router)
+- **Styling**: Vanilla CSS for Glassmorphism effects + Tailwind CSS v4
+- **Icons**: Lucide React
+- **Data Fetching/Scraping**: Axios & Cheerio
+
+---
+
+## Walkthrough & Features
+
+The dashboard focuses on providing a **stunning, premium UI** rather than a basic generic layout.
+
+### Key Visual Features
+
+- **Glassmorphism**: Translucent cards with subtle borders and heavy background blurring specifically designed for dark mode aesthetics.
+- **Ambient Lighting**: CSS radial gradients provide a backdrop glow (cyan and blue orbs) complementing the dark theme.
+- **Micro-interactions**: Rows seamlessly scale and highlight on hover.
+- **Dynamic Leaderboard**: Complete ranking including Gold, Silver, Bronze, and Total medals.
+
+### Local Development
+
+If you wish to run the project locally on your machine:
+
+1. Clone the repository and install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+> _Tracking Excellence • Milano Cortina 2026 • Real-time Data_
